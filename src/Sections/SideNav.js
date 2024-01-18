@@ -2,10 +2,10 @@ import React from "react";
 
 function SideNav() {
   return (
-    <div class="font-sans bg-sidenav-dark p-4">
+    <div class="font-sans bg-sidenav-dark p-4 xs:hidden sm:hidden">
       <h1 class="text-3xl font-bold mt-2">Eduhouse</h1>
 
-      <p class="text-xs mt-6 opacity-30">MAIN MENU</p>
+      <p class="text-xs mt-6 opacity-30 uppercase">Main Menu</p>
       <ul class="flex flex-col justify-center text-xs font-semibold p-3 leading-10">
         <li class="flex items-center gap-1 text-yellow-dark font-bold bg-grey-default -ml-10 px-10 rounded-2xl">
           <ion-icon name="home" class=""></ion-icon>
@@ -32,7 +32,7 @@ function SideNav() {
           <a href="">Community</a>
         </li>
       </ul>
-      <p class="text-xs opacity-30">SETTING</p>
+      <p class="text-xs opacity-30 uppercase">setting</p>
       <ul class="flex flex-col justify-center text-xs font-semibold p-3 leading-10">
         <li class="flex items-center gap-1">
           <ion-icon name="person-outline" class="nav-icon"></ion-icon>

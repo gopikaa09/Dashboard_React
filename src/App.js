@@ -5,7 +5,6 @@ import CardComponent from "./Components/CardComponent";
 import CourseCard from "./Components/CourseCard";
 import MentorCard from "./Components/MentorCard";
 import SideContaine from "./Sections/SideContaine";
-import SideNav from "./Sections/SideNav";
 
 function App() {
   return (
