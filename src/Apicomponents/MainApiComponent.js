@@ -9,15 +9,24 @@ function MainApiComponent() {
   const { data: MentorsData } = useApicall(`${url}/Topmentors`);
 
   console.log(CourseData, CategoriesData, MentorsData);
+  const DisplayNavbar = () => {
+    console.log("hasds");
+  };
   return (
-    <div className="grid grid-cols-5 gap-4 mr-4 xs:grid-cols-3 xs:m-2 sm:grid-cols-3 sm:mx-5 lg:grid-cols-4">
+    <div className="grid grid-cols-5 gap-4 mr-4 xs:grid-cols-3 xs:mx-2 xs:-my-1 sm:-my-1 sm:grid-cols-3 sm:mx-5 lg:grid-cols-4">
+      <div
+        className="absolute top-5 hover:cursor-pointe lg:hidden xl:hidden 2xl:hidden 3xl:hidden xs:block sm"
+        onClick={DisplayNavbar}
+      >
+        <ion-icon name="menu-outline" class="size-6 "></ion-icon>
+      </div>
       <SideNav />
       <div className="sideContainer col-span-4 grid grid-cols-4 gap-x-5 gap-y-4 py-4 sm:grid-cols-4 lg:grid-cols-3 lg:col-span-3">
         <div className="col-span-full">
           <div className="flex justify-between gap-4 items-center mt-1">
             <input
               type="text"
-              className="bg-grey-light w-5/12 rounded-xl px-2 py-2 text-tiny shadow-sm"
+              className="bg-grey-light w-5/12 rounded-xl px-2 py-2 text-tiny shadow-sm xs:ml-8 xs:w-48 sm:ml-8"
               placeholder="&#xF002; Search here"
               style={{ fontFamily: "Arial, FontAwesome" }}
             />

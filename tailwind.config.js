@@ -3,6 +3,7 @@ module.exports = {
   content: ["./src/**/*.js", "./*.json"],
   theme: {
     screens: {
+      "3xl": { max: "2560px" },
       "2xl": { max: "1535px" },
       // => @media (max-width: 1535px) { ... }
 
