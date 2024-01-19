@@ -3,13 +3,11 @@ import useApicall from "../CustomHooks/useApicall";
 import SideNav from "../Sections/SideNav";
 
 function MainApiComponent() {
-  const { data: CourseData } = useApicall(
-    "http://localhost:5000/PresentCourses"
-  );
-  const { data: CategoriesData } = useApicall(
-    "http://localhost:5000/categories"
-  );
-  const { data: MentorsData } = useApicall("http://localhost:5000/Topmentors");
+  const url = "http://localhost:5000";
+  const { data: CourseData } = useApicall(`${url}/PresentCourses`);
+  const { data: CategoriesData } = useApicall(`${url}/categories`);
+  const { data: MentorsData } = useApicall(`${url}/Topmentors`);
+
   console.log(CourseData, CategoriesData, MentorsData);
   return (
     <div className="grid grid-cols-5 gap-4 mr-4 xs:grid-cols-3 xs:m-2 sm:grid-cols-3 sm:mx-5 lg:grid-cols-4">
@@ -44,28 +42,14 @@ function MainApiComponent() {
             console.log(val);
             return (
               <div
-                className={` py-3 px-4 rounded-xl leading-8 shadow
-                ${
-                  ind === 0
-                    ? "bg-indigo-light"
-                    : ind === 1
-                    ? "bg-red-light"
-                    : "bg-blue-light"
-                }
-                sm:col-span-2
-                xs:col-span-full`}
+                className={`py-3 px-4 rounded-xl leading-8 shadow
+                 bg-${val.bgcolor}
+                  sm:col-span-2
+                  xs:col-span-full`}
               >
                 <div className="flex justify-between items-center">
                   <p className="text-tiny opacity-50 mb-2.5">
-                    <span
-                      class={`opacity-50 ${
-                        ind === 0
-                          ? "text-indigo-dark"
-                          : ind === 1
-                          ? "text-red-dark"
-                          : "text-blue-dark"
-                      }`}
-                    >
+                    <span className={`opacity-50 text-${val.color}`}>
                       Start:
                     </span>
                     {val.startDate}
@@ -73,24 +57,12 @@ function MainApiComponent() {
                   <p>
                     <ion-icon
                       name={val.CourseIcon}
-                      class={`bg-grey-default p-2 rounded-3xl size-5 ${
-                        ind === 0
-                          ? "text-indigo-dark"
-                          : ind === 1
-                          ? "text-red-dark"
-                          : "text-blue-dark"
-                      }`}
+                      class={`bg-grey-default p-2 rounded-3xl size-5 text-${val.color}`}
                     ></ion-icon>
                   </p>
                 </div>
                 <p
-                  className={` font-extrabold mb-2.5 text-sm ${
-                    ind === 0
-                      ? "text-indigo-dark"
-                      : ind === 1
-                      ? "text-red-dark"
-                      : "text-blue-dark"
-                  }`}
+                  className={`font-extrabold mb-2.5 text-sm text-${val.color}`}
                 >
                   {val.title}
                 </p>
@@ -101,23 +73,9 @@ function MainApiComponent() {
                   {val.about}
                 </p>
 
-                <div
-                  className={`w-full rounded-full h-0.5 ${
-                    ind === 0
-                      ? "bg-indigo-200"
-                      : ind === 1
-                      ? "bg-red-200"
-                      : "bg-blue-200"
-                  }`}
-                >
+                <div className={`w-full rounded-full h-0.5 bg-${val.default}`}>
                   <div
-                    className={`h-0.5 rounded-full after:content-[] ${
-                      ind === 0
-                        ? "bg-indigo-dark"
-                        : ind === 1
-                        ? "bg-red-dark"
-                        : "bg-blue-dark"
-                    }`}
+                    className={`h-0.5 rounded-full bg-${val.color}`}
                     style={{ width: val.progress }}
                   ></div>
                 </div>
