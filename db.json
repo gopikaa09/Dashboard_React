@@ -75,7 +75,11 @@
       "CourseIcon":"id-card-outline",
       "description":"Learn App design from our expert trainer",
       "about":"Finally a comprehensive guide to using sketch for designing...",
-      "progress":"20%"
+      "progress":"20%",
+      "bgcolor":"indigo-light",
+      "color":"indigo-dark",
+      "default":"indigo-200"
+    
     },
     {
       "startDate":"Dec,25,2021",
@@ -83,7 +87,10 @@
       "CourseIcon":"desktop-outline",
       "description":"Learn Web design from our expert trainer",
       "about":"Finally a comprehensive guide to using sketch for designing...",
-      "progress":"80%"
+      "progress":"80%",
+      "bgcolor":"red-light",
+      "color":"red-dark",
+      "default":"red-200"
     },
     {
       "startDate":"Dec,12,2022",
@@ -91,7 +98,10 @@
       "CourseIcon":"calendar-outline",
       "description":"Learn Typography from our expert trainer",
       "about":"Finally a comprehensive guide to using sketch for designing...",
-      "progress":"50%"
+      "progress":"50%",
+      "bgcolor":"blue-light",
+      "color":"blue-dark",
+      "default":"blue-200"
     }
   ]
 }
